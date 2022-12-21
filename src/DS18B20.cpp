@@ -22,6 +22,22 @@ DS18B20::DS18B20(uint8_t pin) :
     }
 }
 
+void DS18B20::begin() {
+    resetSearch();
+    sendCommand(SKIP_ROM, READ_POWER_SUPPLY);
+    globalPowerMode = oneWire.read_bit();
+
+    while (selectNext()) {
+        uint8_t resolution = getResolution();
+
+        if (resolution > globalResolution) {
+            globalResolution = resolution;
+        }
+
+        numberOfDevices++;
+    }
+}
+
 uint8_t DS18B20::select(uint8_t address[]) {
     if (isConnected(address)) {
         memcpy(selectedAddress, address, 8);

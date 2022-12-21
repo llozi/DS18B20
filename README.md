@@ -1,5 +1,11 @@
 # DS18B20 #
 
+This is a fork of matmunk/DS18B20. It adds a begin() method to the DS18B20 class to allow for initialization after instanciation. This is useful if the powering to the sensor is controlled via a GPIO of the microcontroller.
+
+Additionally it fixes two compiler warnings.
+
+Below the original README.md:
+
 Arduino library for the Maxim Integrated DS18B20 1-Wire temperature sensor. This library is very simple and intuitive to use, and supports auto-discovering sensors with an optional high/low condition or manually addressing individual sensors.
 
 For example, we can get the temperature from every sensor on the wire with just a few lines of code:

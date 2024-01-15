@@ -1,6 +1,6 @@
 # DS18B20 #
 
-This is a fork of matmunk/DS18B20. It adds a begin() method to the DS18B20 class to allow for initialization after instanciation. This is useful if the powering to the sensor is controlled via a GPIO of the microcontroller.
+This is a fork of matmunk/DS18B20. It adds a begin() method to the DS18B20 class to allow for initialization after instantiation. This is useful if the powering to the sensor is controlled via a GPIO of the microcontroller.
 
 Additionally it fixes two compiler warnings.
 
